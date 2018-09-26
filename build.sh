@@ -1,10 +1,6 @@
 #!/bin/bash
 set -e
 
-install_packages() {
-  DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends "$@"
-}
-
 download_and_extract() {
   src=${1}
   dest=${2}
