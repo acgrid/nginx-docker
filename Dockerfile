@@ -9,8 +9,8 @@ ARG WITH_PAGESPEED=true
 ENV NGINX_BUILD_ASSETS_DIR=/var/lib/docker-nginx \
     NGINX_BUILD_ROOT_DIR=/var/lib/docker-nginx/rootfs
 
-RUN yum update -y && yum install -y epel-release
-RUN yum install -y gcc gcc-c++ make automake autoconf file wget tar bzip2 libtool zlib-devel GeoIP-devel libuuid-devel
+RUN yum update -y
+RUN yum install -y gcc gcc-c++ make automake autoconf wget tar bzip2 libtool zlib-devel GeoIP-devel libuuid-devel
 
 COPY build.sh ${NGINX_BUILD_ASSETS_DIR}/
 RUN chmod +x ${NGINX_BUILD_ASSETS_DIR}/build.sh
